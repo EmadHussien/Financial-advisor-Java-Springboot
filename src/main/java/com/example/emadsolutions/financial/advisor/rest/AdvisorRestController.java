@@ -26,11 +26,6 @@ import java.util.Optional;
 @RestController
 public class AdvisorRestController {
 
-    private final AdvisorReposotiry advisorReposotiry;
-    private final ClientReposotiry clientReposotiry;
-
-    private final PortfolioReposotiry portfolioReposotiry;
-    private final SecurityReposotiry securityReposotiry;
 
     private final AdvisorService advisorService;
     private final ClientService clientService;
@@ -40,15 +35,10 @@ public class AdvisorRestController {
 
     @Autowired
     public AdvisorRestController(
-            AdvisorReposotiry advisorReposotiry ,ClientReposotiry clientReposotiry,SecurityReposotiry securityReposotiry,PortfolioReposotiry portfolioReposotiry
-           , AdvisorService advisorService,ClientService clientService,PortfolioService portfolioService,
+            AdvisorService advisorService,ClientService clientService,PortfolioService portfolioService,
             SecurityService securityService
 
     ) {
-        this.advisorReposotiry = advisorReposotiry;
-        this.clientReposotiry = clientReposotiry;
-        this.securityReposotiry = securityReposotiry;
-        this.portfolioReposotiry = portfolioReposotiry;
 
         this.advisorService = advisorService;
         this.clientService = clientService;
@@ -57,12 +47,13 @@ public class AdvisorRestController {
     }
 
     // TO BE DELETED
+  /*
     @GetMapping("/advisors")
     public List<Advisor> getAdvisors()
     {
         return advisorReposotiry.findAll();
     }
-
+  */
     // create client associated to an advisor
     @PostMapping("advisors/{advisorId}/clients")
     public ResponseEntity<?> createClient(@PathVariable long advisorId,  @RequestBody Client theClient)
