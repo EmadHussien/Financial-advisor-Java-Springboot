@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "11bf8062-0109-442f-b34f-174af5c17eab",
+		"name": "Financial Advisors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21228226"
+	},
+	"item": [
+		{
+			"name": "read clients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/advisors/1/clients"
+			},
+			"response": []
+		},
+		{
+			"name": "create client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"firstName\": \"emad\",\r\n\"lastName\": \"Hussien\",\r\n\"address\": \"10 ibarhim desouky st\",\r\n\"phone\": \"01116446214\",\r\n\"email\": \"emadhussien@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/advisors/1/clients"
+			},
+			"response": []
+		},
+		{
+			"name": "update client",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"firstName\": \"yazan\",\r\n    \"lastName\": \"islam\",\r\n    \"address\": \"10 ibarhim desouky st\",\r\n    \"phone\": \"01116446214\",\r\n    \"email\": \"yazan@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/advisors/1/clients/1"
+			},
+			"response": []
+		},
+		{
+			"name": "delete client",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/advisors/1/clients/1"
+			},
+			"response": []
+		},
+		{
+			"name": "create security",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"name\": \"Sharm Resort\",\r\n \"category\": \"investments\",\r\n \"purshasePrice\": 100000.0,\r\n \"quantity\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/advisors/1/clients/1/securities"
+			},
+			"response": []
+		},
+		{
+			"name": "get client securites",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/advisors/1/clients/1/securities"
+			},
+			"response": []
+		},
+		{
+			"name": "update security",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"name\": \"Sharm Resort\",\r\n        \"category\": \"investments in tourism\",\r\n        \"purshasePrice\": 100000.0,\r\n        \"quantity\": 10\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/advisors/1/clients/1/portfolios/1/securities/1"
+			},
+			"response": []
+		},
+		{
+			"name": "delete security",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/advisors/1/clients/1/portfolios/1/securities/1"
+			},
+			"response": []
+		}
+	]
+}
